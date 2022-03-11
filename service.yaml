@@ -23,8 +23,11 @@ metadata:
 spec:
   ports:
   - name: http
-    port: 8161
-    nodePort: 30010
+    port: 8161 #pod 내부포트
+    nodePort: 30010 #외부에서 접근가능한포트
+
+  - name: endpoint
+    port: 61616
 
   selector: 
     app: queue
