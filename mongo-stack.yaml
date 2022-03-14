@@ -22,9 +22,12 @@ spec:
             mountPath: /data/db
       volumes:
         - name: mongo-persistent-storage
-          hostPath:
-            path: /mnt/some/directory/structure/
-            type: DirectoryOrCreate
+          # hostPath:
+          #   path: /mnt/some/directory/structure/
+          #   type: DirectoryOrCreate
+          # 하드코딩대신에 pointer를 적용한다
+          persistentVolumeClaim:
+            claimName: mongo-pvc
 
 ---
 apiVersion: v1
