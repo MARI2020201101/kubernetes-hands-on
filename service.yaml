@@ -44,10 +44,25 @@ spec:
   ports:
   - name: http
     port: 8080 
-    nodePort: 30020 
 
   selector: 
     app: position-tracker
 
-  type: NodePort 
-        
+  type: ClusterIp 
+
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: fleetman-api-gateway
+
+spec:
+  ports:
+  - name: http
+    port: 8080 
+    nodePort: 30020
+
+  selector: 
+    app: api-gateway
+
+  type: NodePort
