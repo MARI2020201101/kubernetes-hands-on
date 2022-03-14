@@ -48,7 +48,7 @@ spec:
   selector: 
     app: position-tracker
 
-  type: ClusterIp 
+  type: ClusterIP 
 
 ---
 apiVersion: v1
