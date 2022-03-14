@@ -33,4 +33,21 @@ spec:
     app: queue
 
   type: NodePort 
-    
+
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: fleetman-position-tracker
+
+spec:
+  ports:
+  - name: http
+    port: 8080 
+    nodePort: 30020 
+
+  selector: 
+    app: position-tracker
+
+  type: NodePort 
+        
